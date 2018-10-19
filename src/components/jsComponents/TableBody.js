@@ -6,7 +6,7 @@ class TableBody extends Component {
     return (
       <div className="TableBody">
         {this.props.people.map(man => {
-          return <TableRow key={man.id} man={man} />;
+          return <TableRow key={man.id} man={man} onDeleteRow={this.props.onDeleteRow}/>;
         })}
       </div>
     );

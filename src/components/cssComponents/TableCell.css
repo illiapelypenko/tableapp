@@ -1,5 +1,4 @@
 .TableCell {
-  box-sizing: border-box;
   padding: 5px;
 }
 .firstName {
@@ -9,7 +8,7 @@
   width: 35%;
 }
 .phoneNumber {
-  width: 35%;
+  width: 30%;
 }
 .age {
   width: 10%;

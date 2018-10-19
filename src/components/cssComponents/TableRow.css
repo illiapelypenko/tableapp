@@ -2,3 +2,18 @@
   display: flex;
   border-bottom: 1px solid #555555;
 }
+.TableRow:hover {
+  background-color: aquamarine;
+}
+.TableRow > button{
+  width: 5%;
+  background-color: inherit;
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.TableRow > button:hover {
+  background-color: aqua;
+}

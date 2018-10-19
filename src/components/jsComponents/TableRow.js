@@ -1,18 +1,25 @@
 import React, { Component } from 'react';
 import TableCell from './TableCell.js';
 import '../cssComponents/TableRow.css';
-import '../cssComponents/HeadRow.css';
 
 class TableRow extends Component {
+  constructor(props){
+    super(props);
+    this.handleDeleteRow = this.handleDeleteRow.bind(this);
+  }
+  handleDeleteRow(){
+    this.props.onDeleteRow(this.props.man);
+  }
   render() {
     return (
-      <div className={this.props.additionalClass ? "TableRow " + this.props.additionalClass : "TableRow"} >
+      <div className='TableRow'>
         {Object.keys(this.props.man).map(prop => {
           if(prop != 'id'){
             //additional class - property name(for css)
             return <TableCell prop={this.props.man[prop]} additionalClass={prop}/>;
           }
         })}
+        <button onClick={this.handleDeleteRow}>D</button>
       </div>
     );
   }

@@ -7,6 +7,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
+      sortOn: 'default',
       people: [
         {
           id: 0,
@@ -38,11 +39,37 @@ class App extends Component {
         }
       ]
     }
+    this.handleDeleteRow = this.handleDeleteRow.bind(this);
+    this.handleSort = this.handleSort.bind(this);
+    this.Sort = this.Sort.bind(this);
+  }
+  handleDeleteRow(man){
+    let newPeople = this.state.people.slice();
+    newPeople.splice(this.state.people.indexOf(man), 1);
+    this.setState({people: newPeople});
+  }
+  handleSort(prop){
+    this.setState({sortOn: prop});
+  }
+  Sort(a, b){//   a = men1   b = men2
+    switch(this.state.sortOn){
+      default:
+        if(a[this.state.sortOn] > b[this.state.sortOn]){
+          return 1;
+        }
+        if(a[this.state.sortOn] < b[this.state.sortOn]){
+          return -1;
+        }
+        return 0;
+      case 'age':
+        return a.age - b.age;
+    }
   }
   render() {
     return (
       <div className="App">
-        <Table people={this.state.people}/>
+        {console.log(this.state.sortOn)}
+        <Table people={this.state.people.sort((a, b)=>{return this.Sort(a, b)})} onDeleteRow={this.handleDeleteRow} onSort={this.handleSort}/>
         <Form />
       </div>
     );
