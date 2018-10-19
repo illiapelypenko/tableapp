@@ -1,0 +1,6 @@
+.HeadRow {
+  font-weight: bold;
+}
+.HeadRow > .TableCell:hover {
+  background-color: aqua;
+}

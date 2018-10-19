@@ -1,0 +1,16 @@
+.TableCell {
+  box-sizing: border-box;
+  padding: 5px;
+}
+.firstName {
+  width: 20%;
+}
+.lastName {
+  width: 35%;
+}
+.phoneNumber {
+  width: 35%;
+}
+.age {
+  width: 10%;
+}

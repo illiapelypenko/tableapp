@@ -1,25 +1,49 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Table from './components/jsComponents/Table.js';
+import Form from './components/jsComponents/Form.js';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      people: [
+        {
+          id: 0,
+          firstName: 'Harry',
+          lastName: 'Potter',
+          phoneNumber: '0987654321',
+          age: 11
+        },
+        {
+          id: 1,
+          firstName: 'Tom',
+          lastName: 'Riddle',
+          phoneNumber: '0666993322',
+          age: 70
+        },
+        {
+          id: 2,
+          firstName: 'Albus',
+          lastName: 'Dumbuldor',
+          phoneNumber: '0336669911',
+          age: 80
+        },
+        {
+          id: 3,
+          firstName: 'Sirius',
+          lastName: 'Black',
+          phoneNumber: '0123456789',
+          age: 35
+        }
+      ]
+    }
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Table people={this.state.people}/>
+        <Form />
       </div>
     );
   }
