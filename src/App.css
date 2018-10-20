@@ -9,5 +9,6 @@ body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto auto;
-  grid-template-areas: '. . Table Table Table Table Table Table Table Table . .';
+  grid-template-areas: '. . Table Table Table Table Table Table Table Table . .'
+  '. . Form Form Form Form Form Form Form Form . .';
 }

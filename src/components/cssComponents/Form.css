@@ -1,0 +1,35 @@
+.Form {
+  box-sizing: border-box;
+  grid-area: Form;
+}
+form {
+  display: flex;
+}
+.formInput {
+  max-height: 28px;
+  margin: 0;
+  text-decoration: none;
+  padding: 8px;
+  background-color: aliceblue;
+}
+.firstNameInput {
+  width: 20%;
+}
+.lastNameInput {
+  width: 35%;
+}
+.phoneNumberInput {
+  width: 30%;
+}
+.ageInput {
+  width: 10%;
+}
+.inputButton {
+  max-width: 5%;
+  background-color: inherit;
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
