@@ -27,7 +27,9 @@ class Form extends Component {
     this.setState({phoneNumber: e.target.value});
   }
   handleAgeInputChange(e){
-    this.setState({age: parseInt(e.target.value)});
+    if(parseInt(e.target.value) != NaN){
+      this.setState({age: parseInt(e.target.value)});
+    }
   }
   handleAddMan(e){
     this.props.onAddMan(this.state);
