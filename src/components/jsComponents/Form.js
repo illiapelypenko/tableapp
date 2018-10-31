@@ -29,11 +29,11 @@ class Form extends Component {
     }
   }
   handleFirstNameInputChange(e){
-    e.target.value.match(/^[a-zA-Z ]{2,30}$/i) ? this.setState({firstNameValid: true}) : this.setState({firstNameValid: false});
+    e.target.value.match(/^[a-zA-Z ]{3,20}$/i) ? this.setState({firstNameValid: true}) : this.setState({firstNameValid: false});
     this.setState({firstName: e.target.value});
   }
   handleLastNameInputChange(e){
-    e.target.value.match(/^[a-zA-Z ]{2,30}$/i) ? this.setState({lastNameValid: true}) : this.setState({lastNameValid: false});
+    e.target.value.match(/^[a-zA-Z ]{3,20}$/i) ? this.setState({lastNameValid: true}) : this.setState({lastNameValid: false});
     this.setState({lastName: e.target.value});
   }
   handlephoneNumberInputChange(e){
@@ -44,8 +44,15 @@ class Form extends Component {
     e.target.value.match(/[^0-9]/i) ? this.setState({ageValid: false}) : this.setState({ageValid: true});
     this.setState({age: e.target.value});
   }
+  isntBlank(){
+    if(this.state.firstName != '' && this.state.lastName != '' && this.state.phoneNumber != '' && this.state.age != '') {
+      return true;
+    } else {
+      return false;
+    }
+  }
   handleAddMan(e){
-    if(this.AllValid()){
+    if(this.AllValid() && this.isntBlank()){
       this.setState({age: parseInt(this.state.age)});
       this.props.onAddMan({
         id: this.state.id,
@@ -64,17 +71,17 @@ class Form extends Component {
     e.preventDefault();
   }
   render() {
-    let firstNameColor = this.state.firstNameValid===true?"green":"red";
-    let lastNameColor = this.state.lastNameValid===true?"green":"red";
-    let phoneNumberColor = this.state.phoneNumberValid===true?"green":"red";
-    let ageColor = this.state.ageValid===true?"green":"red";
+    let firstNameColor = this.state.firstNameValid===true?"white":"rgba(255, 10, 0, 0.1)";
+    let lastNameColor = this.state.lastNameValid===true?"white":"rgba(255, 10, 0, 0.1)";
+    let phoneNumberColor = this.state.phoneNumberValid===true?"white":"rgba(255, 10, 0, 0.1)";
+    let ageColor = this.state.ageValid===true?"white":"rgba(255, 10, 0, 0.1)";
     return (
       <div className="Form">
         <form onSubmit={this.handleAddMan}>
-          <input className='firstNameInput formInput' spellCheck="false" type='text' onChange={this.handleFirstNameInputChange} value={this.state.firstName} style={{borderColor:firstNameColor}}></input>
-          <input className='lastNameInput formInput' spellCheck="false" type='text' onChange={this.handleLastNameInputChange} value={this.state.lastName} style={{borderColor:lastNameColor}}></input>
-          <input className='phoneNumberInput formInput' spellCheck="false" type='text' onChange={this.handlephoneNumberInputChange} value={this.state.phoneNumber} style={{borderColor:phoneNumberColor}}></input>
-          <input className='ageInput formInput' spellCheck="false" type='text' onChange={this.handleAgeInputChange} value={this.state.age} style={{borderColor:ageColor}}></input>
+          <input className='firstNameInput formInput' spellCheck="false" type='text' onChange={this.handleFirstNameInputChange} value={this.state.firstName} style={{backgroundColor:firstNameColor}}></input>
+          <input className='lastNameInput formInput' spellCheck="false" type='text' onChange={this.handleLastNameInputChange} value={this.state.lastName} style={{backgroundColor:lastNameColor}}></input>
+          <input className='phoneNumberInput formInput' spellCheck="false" type='text' onChange={this.handlephoneNumberInputChange} value={this.state.phoneNumber} style={{backgroundColor:phoneNumberColor}}></input>
+          <input className='ageInput formInput' spellCheck="false" type='text' onChange={this.handleAgeInputChange} value={this.state.age} style={{backgroundColor:ageColor}}></input>
           <input className='inputButton' type='submit' value='Add' />
         </form>
       </div>

@@ -3,7 +3,7 @@
   border-bottom: 1px solid #555555;
 }
 .TableRow:hover {
-  background-color: aquamarine;
+  background-color: lightskyblue;
 }
 .TableRow > button{
   width: 5%;
@@ -13,7 +13,9 @@
   text-decoration: none;
   cursor: pointer;
   -webkit-appearance: none;
+  outline: none;
 }
 .TableRow > button:hover {
-  background-color: aqua;
+  background-color: red;
+  outline: none;
 }

@@ -19,7 +19,7 @@ class TableRow extends Component {
             return <TableCell prop={this.props.man[prop]} additionalClass={prop}/>;
           }
         })}
-        <button onClick={this.handleDeleteRow}>D</button>
+        <button onClick={this.handleDeleteRow}>Delete</button>
       </div>
     );
   }

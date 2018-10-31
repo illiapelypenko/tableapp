@@ -38,13 +38,6 @@ class App extends Component {
     this.updatePeople();
   }
   handleSort(prop){
-    // if(this.state.sortState[prop] === 'reverse'){
-    //   this.setState({sortState: {[prop]: 'default'}});
-    // } else if (this.state.sortState[prop] === 'default'){
-    //   this.setState({sortState: {[prop]: 'reverse'}});
-    // }
-    // this.setState({sortOn: prop});//по каком свойству сортировать
-
     if(this.state.sortState[prop] === 'reverse'){
       this.setState(prevState => ({
         sortState: {

@@ -1,6 +1,7 @@
 .Form {
   box-sizing: border-box;
   grid-area: Form;
+  background-color: white;
 }
 form {
   display: flex;
@@ -10,7 +11,7 @@ form {
   margin: 0;
   text-decoration: none;
   padding: 8px;
-  background-color: aliceblue;
+  background-color: white;
   outline: none;
 }
 .firstNameInput {
@@ -26,11 +27,12 @@ form {
   width: 10%;
 }
 .inputButton {
-  max-width: 5%;
+  width: 5%;
   background-color: inherit;
   border: none;
   margin: 0;
   text-decoration: none;
   cursor: pointer;
   -webkit-appearance: none;
+  outline: none;
 }
