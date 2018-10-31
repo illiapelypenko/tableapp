@@ -1,9 +1,11 @@
 .TableHeadRow { 
   display: flex;
   border-bottom: 1px solid #555555;
+  background-color: lightblue;
 } 
 .TableHeadRow > button{
-  background-color: inherit;
+  background-color: lightblue;
+  
   border: none;
   margin: 0;
   text-decoration: none;

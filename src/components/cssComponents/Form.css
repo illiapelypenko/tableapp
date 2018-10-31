@@ -28,11 +28,14 @@ form {
 }
 .inputButton {
   width: 5%;
-  background-color: inherit;
+  
   border: none;
-  margin: 0;
+  
   text-decoration: none;
   cursor: pointer;
   -webkit-appearance: none;
   outline: none;
+  border-radius: 20px;
+  margin: 5px;
+  background-color: lightgreen;
 }

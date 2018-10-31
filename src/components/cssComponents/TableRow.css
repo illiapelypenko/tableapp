@@ -14,8 +14,11 @@
   cursor: pointer;
   -webkit-appearance: none;
   outline: none;
+  border-radius: 20px;
+  margin: 5px;
+  background-color: lightcoral;
 }
 .TableRow > button:hover {
-  background-color: red;
+  background-color: lightcoral;
   outline: none;
 }
