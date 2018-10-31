@@ -6,14 +6,15 @@ class TableHeadCell extends Component {
     super(props);
     this.handleSort = this.handleSort.bind(this);
   }
-  handleSort(){
+  handleSort(e){
     this.props.onSort(this.props.rowName);
+    e.preventDefault();
   }
   render() {
     return (
-      <div className={"TableHeadCell " + this.props.additionalClass} onClick={this.handleSort}>
+      <button className={"TableHeadCell " + this.props.additionalClass} onClick={this.handleSort}>
         {this.props.rowName}
-      </div>
+      </button>
     );
   }
 }

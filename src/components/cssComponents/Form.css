@@ -11,6 +11,7 @@ form {
   text-decoration: none;
   padding: 8px;
   background-color: aliceblue;
+  outline: none;
 }
 .firstNameInput {
   width: 20%;

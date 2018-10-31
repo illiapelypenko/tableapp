@@ -1,4 +1,5 @@
 .TableHeadCell {
   padding: 5px;
   font-weight: bold;
+  cursor: pointer;
 }
